@@ -7,6 +7,16 @@ namespace Examen1CajeroAutomatico
             InitializeComponent();
         }
         //Para cambiar el color segun el saldo 
+
+        private void limpiar()
+        {
+            txtUsuario.Text = " "; // cadena de texto vacia para que se limpie cuando se hace click en el boton limpiar
+            txtmonto.Text = " ";
+            lblSaldoActual.Text = "50000";
+            lstHistorial.Items.Clear();
+            lblError.Text = "";
+            lblSaldoActual.BackColor = Color.White;
+        }
         private void ColorEtiquetaSaldoActual()
         {
             double SaldoActual = double.Parse(lblSaldoActual.Text);
@@ -67,13 +77,8 @@ namespace Examen1CajeroAutomatico
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            txtUsuario.Text = " "; // cadena de texto vacia para que se limpie cuando se hace click en el boton limpiar
-            txtmonto.Text = " ";
-            lblSaldoActual.Text = "50000";
-            lstHistorial.Items.Clear();
-            lblError.Text = "";
-            lblSaldoActual.BackColor = Color.White;
 
+            limpiar();
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
